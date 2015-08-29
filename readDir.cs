@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace WindowsFormsApplication1
 {
@@ -11,6 +12,7 @@ namespace WindowsFormsApplication1
 
         private Form1 form;
         public string folderPath = "";
+        private Array arrayFiles;
 
         public void Main(){
         }
@@ -18,16 +20,35 @@ namespace WindowsFormsApplication1
         public void setView(Form1 form)
         {
             this.form = form;
-            this.setFolder();
         }
 
 
-        public void setFolder()
+        public void setFolder(string folder)
         {
-            form.formTextFolder = "Sélectionnez un répertoire";
 
+            if (!String.IsNullOrEmpty(folder)){
+                this.folderPath = folder;
+            }
+            this.setFiles();
         }
 
-
+        // Ajoute les fichiers du répertoire dans un Array
+        public void setFiles()
+        {
+            if (!String.IsNullOrEmpty(this.folderPath))
+            {
+                this.arrayFiles = Directory.GetFiles(this.folderPath);
+                this.readFiles();
+            }
+        }
+        
+        // Lecture de l'array qui contient tous les fichiers
+        public void readFiles()
+        {
+            foreach(string file in this.arrayFiles)
+            {
+                this.form.formtextFiles += file+Environment.NewLine;
+            }
+        }
     }
 }

@@ -30,6 +30,12 @@ namespace WindowsFormsApplication1
             set { textFolders.Text = value; }
         }
 
+        public string formtextFiles
+        {
+            get { return textFiles.Text; }
+            set { textFiles.Text = value; }
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -61,6 +67,7 @@ namespace WindowsFormsApplication1
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
                 formTextFolder = folderBrowserDialog1.SelectedPath;
+                this.dirSelector.setFolder(formTextFolder);
             }
         }
 

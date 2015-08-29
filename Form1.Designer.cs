@@ -28,20 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textFiles = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textFolders = new System.Windows.Forms.TextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.textFiles = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // textFiles
-            // 
-            this.textFiles.Location = new System.Drawing.Point(49, 50);
-            this.textFiles.Multiline = true;
-            this.textFiles.Name = "textFiles";
-            this.textFiles.Size = new System.Drawing.Size(510, 205);
-            this.textFiles.TabIndex = 1;
-            this.textFiles.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -68,6 +59,19 @@
             // 
             this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
             // 
+            // textFiles
+            // 
+            this.textFiles.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textFiles.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textFiles.Location = new System.Drawing.Point(49, 50);
+            this.textFiles.Multiline = true;
+            this.textFiles.Name = "textFiles";
+            this.textFiles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textFiles.Size = new System.Drawing.Size(510, 205);
+            this.textFiles.TabIndex = 1;
+            this.textFiles.TextChanged += new System.EventHandler(this.textFiles_TextChanged);
+            this.textFiles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textFiles_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -85,10 +89,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textFiles;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textFolders;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.TextBox textFiles;
     }
 }
 

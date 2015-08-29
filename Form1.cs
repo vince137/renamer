@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace WindowsFormsApplication1
 {
@@ -14,6 +15,8 @@ namespace WindowsFormsApplication1
     {
 
         readDir dirSelector;
+        int files_CursorPosition = 0;
+        bool files_BackPressed = false;
 
         public Form1()
         {
@@ -41,9 +44,15 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void textFiles_TextChanged(object sender, KeyEventArgs e)
         {
-
+            bool deleteKey = false;
+            if (e.KeyCode == Keys.Enter) deleteKey = true;
+            if(deleteKey == true)
+            {
+                e.SuppressKeyPress = true;
+                return;
+            }
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -73,6 +82,11 @@ namespace WindowsFormsApplication1
 
 
         private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textFiles_TextChanged(object sender, EventArgs e)
         {
 
         }

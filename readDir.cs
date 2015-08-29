@@ -24,7 +24,7 @@ namespace WindowsFormsApplication1
 
         public void setFolder()
         {
-            form.formTextFolder = "toto";
+            form.formTextFolder = "Sélectionnez un répertoire";
 
         }
 

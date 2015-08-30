@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
@@ -12,7 +13,9 @@ namespace WindowsFormsApplication1
 
         private Form1 form;
         public string folderPath;
-        private Array arrayFiles;
+        public string[] arrayFiles = new string[255];
+        public string[] arrayFilesModified = new string[255];
+        public int totalLines;
 
         public void Main(){
         }
@@ -37,9 +40,22 @@ namespace WindowsFormsApplication1
         {
             if (!String.IsNullOrEmpty(this.folderPath))
             {
-                this.arrayFiles = Directory.GetFiles(this.folderPath)
+                Array varFilesList;
+                varFilesList = Directory.GetFiles(this.folderPath)
                     .Select(path => Path.GetFileName(path))
                     .ToArray();
+
+                this.totalLines = varFilesList.Length;
+
+                int i= 0;
+                foreach(string filesList in varFilesList)
+                {
+                    this.arrayFiles[i] = filesList;
+                    this.form.addFiles(i, filesList);
+                    i++;
+
+
+                }
                 this.readFiles();
             }
         }
@@ -47,13 +63,15 @@ namespace WindowsFormsApplication1
         // Lecture de l'array qui contient tous les fichiers
         public void readFiles()
         {
+            /*
+            form.formtextFiles = "";
             int i = 0;
             foreach(string file in this.arrayFiles)
             {
                 i++;
                 if (String.IsNullOrEmpty(file)) continue;
-                this.form.formtextFiles += i+". "+file.Replace(this.folderPath,"")+Environment.NewLine;
-            }
+                this.form.formtextFiles += file.Replace(this.folderPath,"")+Environment.NewLine;
+            } */
         }
     }
 }

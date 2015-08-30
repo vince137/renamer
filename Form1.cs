@@ -20,6 +20,8 @@ namespace WindowsFormsApplication1
 
         public Form1()
         {
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             InitializeComponent();
             this.dirSelector = new readDir();
             dirSelector.setView(this);
@@ -33,10 +35,15 @@ namespace WindowsFormsApplication1
             set { textFolders.Text = value; }
         }
 
-        public string formtextFiles
+        public void addFiles(int i, string text)
         {
-            get { return textFiles.Text; }
-            set { textFiles.Text = value; }
+            // Ajoute les textBox à la vue
+            TextBox txt = new TextBox();
+            txt.Name = "textFiles" + i;
+            txt.Width = (this.panelFiles.Width-50);
+            txt.Location = new Point(10,i*20); 
+            txt.Text = text;
+            this.panelFiles.Controls.Add(txt);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -53,6 +60,12 @@ namespace WindowsFormsApplication1
                 e.SuppressKeyPress = true;
                 return;
             }
+        }
+
+        private void textFilesUpdate(object sender, EventArgs e)
+        {
+            int LinesDeleted = 0;      
+                
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -87,6 +100,11 @@ namespace WindowsFormsApplication1
         }
 
         private void textFiles_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelFiles_Paint(object sender, PaintEventArgs e)
         {
 
         }

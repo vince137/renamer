@@ -141,7 +141,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBox3.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="textFolders.Location" type="System.Drawing.Point, System.Drawing">
     <value>305, 27</value>
@@ -162,7 +162,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textFolders.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="folderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -189,6 +189,33 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelFiles.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonSaveFiles.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonSaveFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>594, 387</value>
+  </data>
+  <data name="buttonSaveFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 30</value>
+  </data>
+  <data name="buttonSaveFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="buttonSaveFiles.Text" xml:space="preserve">
+    <value>Sauvegarder</value>
+  </data>
+  <data name="&gt;&gt;buttonSaveFiles.Name" xml:space="preserve">
+    <value>buttonSaveFiles</value>
+  </data>
+  <data name="&gt;&gt;buttonSaveFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonSaveFiles.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonSaveFiles.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

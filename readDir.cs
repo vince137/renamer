@@ -30,7 +30,7 @@ namespace WindowsFormsApplication1
         {
 
             if (!String.IsNullOrEmpty(folder)){
-                this.folderPath = folder;
+                this.folderPath = folder+"\\";
             }
             this.setFiles();
         }
@@ -51,27 +51,12 @@ namespace WindowsFormsApplication1
                 foreach(string filesList in varFilesList)
                 {
                     this.arrayFiles[i] = filesList;
+                    this.arrayFilesModified[i] = filesList;
                     this.form.addFiles(i, filesList);
                     i++;
-
-
                 }
-                this.readFiles();
+                this.form.saveButton(1);
             }
-        }
-        
-        // Lecture de l'array qui contient tous les fichiers
-        public void readFiles()
-        {
-            /*
-            form.formtextFiles = "";
-            int i = 0;
-            foreach(string file in this.arrayFiles)
-            {
-                i++;
-                if (String.IsNullOrEmpty(file)) continue;
-                this.form.formtextFiles += file.Replace(this.folderPath,"")+Environment.NewLine;
-            } */
         }
     }
 }

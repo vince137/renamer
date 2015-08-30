@@ -33,13 +33,13 @@
             this.textFolders = new System.Windows.Forms.TextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.panelFiles = new System.Windows.Forms.Panel();
+            this.buttonSaveFiles = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox3
             // 
             resources.ApplyResources(this.textBox3, "textBox3");
             this.textBox3.Name = "textBox3";
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textFolders
             // 
@@ -49,11 +49,6 @@
             this.textFolders.ForeColor = System.Drawing.SystemColors.Desktop;
             resources.ApplyResources(this.textFolders, "textFolders");
             this.textFolders.Name = "textFolders";
-            this.textFolders.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
-            // 
-            // folderBrowserDialog1
-            // 
-            this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
             // 
             // panelFiles
             // 
@@ -61,16 +56,23 @@
             this.panelFiles.Name = "panelFiles";
             this.panelFiles.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFiles_Paint);
             // 
+            // buttonSaveFiles
+            // 
+            resources.ApplyResources(this.buttonSaveFiles, "buttonSaveFiles");
+            this.buttonSaveFiles.Name = "buttonSaveFiles";
+            this.buttonSaveFiles.UseVisualStyleBackColor = true;
+            this.buttonSaveFiles.Click += new System.EventHandler(this.buttonSaveFiles_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonSaveFiles);
             this.Controls.Add(this.panelFiles);
             this.Controls.Add(this.textFolders);
             this.Controls.Add(this.textBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -81,6 +83,7 @@
         private System.Windows.Forms.TextBox textFolders;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Panel panelFiles;
+        private System.Windows.Forms.Button buttonSaveFiles;
     }
 }
 

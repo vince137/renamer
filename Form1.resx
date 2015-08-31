@@ -144,13 +144,16 @@
     <value>3</value>
   </data>
   <data name="textFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>305, 27</value>
+    <value>465, 55</value>
   </data>
   <data name="textFolders.Size" type="System.Drawing.Size, System.Drawing">
     <value>254, 13</value>
   </data>
   <data name="textFolders.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="textFolders.Text" xml:space="preserve">
+    <value>Choix du répertoire</value>
   </data>
   <data name="&gt;&gt;textFolders.Name" xml:space="preserve">
     <value>textFolders</value>

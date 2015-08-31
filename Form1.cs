@@ -42,6 +42,16 @@ namespace WindowsFormsApplication1
             else if (status == 1) this.buttonSaveFiles.Enabled = true;
         }
 
+        // Removes all the text blocs
+        public void cleanTextFiles()
+        {
+            foreach (Control item in panelFiles.Controls.OfType<TextBox>().ToList())
+            {
+                item.Text = "";
+                panelFiles.Controls.Remove(item);
+            }
+        }
+
         public void addFiles(int i, string text)
         {
             // Ajoute les textBox à la vue
@@ -121,6 +131,11 @@ namespace WindowsFormsApplication1
         }
 
         private void panelFiles_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textFolders_TextChanged(object sender, EventArgs e)
         {
 
         }

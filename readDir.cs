@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace WindowsFormsApplication1
 {
@@ -29,6 +30,12 @@ namespace WindowsFormsApplication1
         public void setFolder(string folder)
         {
 
+            this.form.cleanTextFiles();
+
+            // Clean l'array
+            this.arrayFiles = new string[255];
+            this.arrayFilesModified = new string[255];
+
             if (!String.IsNullOrEmpty(folder)){
                 this.folderPath = folder+"\\";
             }
@@ -40,7 +47,7 @@ namespace WindowsFormsApplication1
         {
             if (!String.IsNullOrEmpty(this.folderPath))
             {
-                Array varFilesList;
+                Array varFilesList = new string[255];
                 varFilesList = Directory.GetFiles(this.folderPath)
                     .Select(path => Path.GetFileName(path))
                     .ToArray();

@@ -49,6 +49,7 @@
             this.textFolders.ForeColor = System.Drawing.SystemColors.Desktop;
             resources.ApplyResources(this.textFolders, "textFolders");
             this.textFolders.Name = "textFolders";
+            this.textFolders.TextChanged += new System.EventHandler(this.textFolders_TextChanged);
             // 
             // panelFiles
             // 

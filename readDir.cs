@@ -17,6 +17,7 @@ namespace WindowsFormsApplication1
         public string[] arrayFiles = new string[255];
         public string[] arrayFilesModified = new string[255];
         public int totalLines;
+        public bool isModified = false;
 
         public void Main(){
         }

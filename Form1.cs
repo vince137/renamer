@@ -40,6 +40,10 @@ namespace WindowsFormsApplication1
         {
             if (status == 0) this.buttonSaveFiles.Enabled = false;
             else if (status == 1) this.buttonSaveFiles.Enabled = true;
+
+            // Reinit bool
+            this.dirSelector.isModified = false;
+
         }
 
         // Removes all the text blocs
@@ -89,6 +93,7 @@ namespace WindowsFormsApplication1
             {
                 if (regex.IsMatch(t))
                 {
+                    this.dirSelector.isModified = true;
                     Int32.TryParse(t, out n);
                     this.dirSelector.arrayFilesModified[n] = textBox.Text;
                     return;
@@ -122,6 +127,11 @@ namespace WindowsFormsApplication1
 
         private void textFolders_Click(object sender, EventArgs e)
         {
+            if (this.dirSelector.isModified == true)
+            {
+                MessageBox.Show("Données non sauvegardées !", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
             FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
